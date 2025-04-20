@@ -57,7 +57,7 @@ public class HexGrid : MonoBehaviour
     {
         position = transform.InverseTransformPoint(position);
         HexCoordinates coordinates = HexCoordinates.FromPosition(position);
-        int index = coordinates.X + coordinates.Z * width + coordinates.Z / 2;
+        int index = coordinates.Q + coordinates.R * width + coordinates.R / 2;
         HexCell cell = cells[index];
         cell.color = color;
         hexMesh.Triangulate(cells);

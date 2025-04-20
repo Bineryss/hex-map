@@ -6,51 +6,51 @@ public struct HexCoordinates
 {
 
     [SerializeField]
-    private int x, z;
+    private int q, r;
 
-    public int X
+    public int Q
     {
         get
         {
-            return x;
+            return q;
         }
     }
 
-    public int Z
+    public int R
     {
         get
         {
-            return z;
+            return r;
         }
     }
-    public int Y
+    public int S
     {
         get
         {
-            return -X - Z;
+            return -Q - R;
         }
     }
 
-    public HexCoordinates(int x, int z)
+    public HexCoordinates(int q, int r)
     {
-        this.x = x;
-        this.z = z;
+        this.q = q;
+        this.r = r;
     }
 
-    public static HexCoordinates FromOffsetCoordinates(int x, int z)
+    public static HexCoordinates FromOffsetCoordinates(int q, int r)
     {
-        return new HexCoordinates(x - z / 2, z);
+        return new HexCoordinates(q - r / 2, r);
     }
 
 
     public override string ToString()
     {
-        return $"({X},{Y},{Z})";
+        return $"(Q {Q},S {S},R {R})";
     }
 
     public string ToStringOnSeparateLines()
     {
-        return $"{X}\n{Y}\n{Z}";
+        return $"{Q}\n{S}\n{R}";
     }
 
     public static HexCoordinates FromPosition(Vector3 position)
@@ -68,16 +68,19 @@ public struct HexCoordinates
 
         if (iX + iY + iZ != 0)
         {
-			float dX = Mathf.Abs(x - iX);
-			float dY = Mathf.Abs(y - iY);
-			float dZ = Mathf.Abs(-x -y - iZ);
+            float dX = Mathf.Abs(x - iX);
+            float dY = Mathf.Abs(y - iY);
+            float dZ = Mathf.Abs(-x - y - iZ);
 
-			if (dX > dY && dX > dZ) {
-				iX = -iY - iZ;
-			}
-			else if (dZ > dY) {
-				iZ = -iX - iY;
-			}        }
+            if (dX > dY && dX > dZ)
+            {
+                iX = -iY - iZ;
+            }
+            else if (dZ > dY)
+            {
+                iZ = -iX - iY;
+            }
+        }
 
         return new HexCoordinates(iX, iZ);
     }
