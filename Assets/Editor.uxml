@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/core.uss?fileID=7433441132597879392&amp;guid=7136f2d001be8264eb8af1895699bdb1&amp;type=3#core" />
+    <ui:VisualElement style="flex-grow: initial; flex-direction: row;">
+        <ui:VisualElement style="flex-grow: initial; flex-direction: column; padding-top: 24px; padding-right: 24px; padding-bottom: 24px; padding-left: 24px; margin-top: 8px; margin-right: 8px; margin-bottom: 8px; margin-left: 8px; background-color: rgba(61, 61, 61, 0.37); border-top-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-bottom-left-radius: 8px;">
+            <ui:Button text="White" name="white" class="button" />
+            <ui:Button name="red" text="Red" class="button" />
+            <ui:Button text="Green" name="green" class="button" />
+            <ui:Button text="Blue" name="blue" class="button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

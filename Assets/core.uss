@@ -1,0 +1,25 @@
+.button {
+    font-size: 48px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(34, 34, 34);
+    -unity-font-style: bold;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding-right: 24px;
+    padding-left: 24px;
+}
+
+.icon {
+    width: 48px;
+    height: 48px;
+    -unity-text-outline-color: rgb(255, 255, 255);
+    -unity-text-outline-width: 1px;
+    max-width: 48px;
+    max-height: 48px;
+}
+
+.checkbox {
+    background-color: rgb(255, 255, 255);
+}
